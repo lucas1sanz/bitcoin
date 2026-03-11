@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bitcoin high sovereignty — air-gapped wallets, multisig 2-of-3, seed XOR, inheritance planning, physical security, and operational security.">
+  <title>Level 4 — High Sovereignty | Bitcoin Security</title>
+  <link rel="icon" href="assets/img/bitcoin-logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header class="site-header">
+  <a href="index.html" class="logo" aria-label="Bitcoin Security — Home">
+    <img src="assets/img/bitcoin-logo.svg" alt="" width="28" height="28">
+    <span class="logo-text">₿<span>itcoin</span> Security</span>
+  </a>
+  <div class="header-search" role="search">
+    <form action="search.html" method="get">
+      <button type="submit" aria-label="Search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.099zm-5.242 1.656a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z" fill="currentColor"/></svg></button>
+      <input type="search" name="q" placeholder="Search topics…" aria-label="Search bitcoin security topics">
+    </form>
+  </div>
+  <div class="header-actions">
+    <a href="https://github.com/lucas1sanz/bitcoin" class="btn-contribute" target="_blank" rel="noopener">Contribute</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="page-wrapper">
+  <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
+  <nav id="sidebar" class="sidebar" aria-label="Site navigation">
+    <div class="sidebar-nav">
+      <div class="sidebar-section-label">Navigation</div>
+      <a href="index.html"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L8.354 1.146z"/></svg> Home</a>
+      <div class="sidebar-section-label">Security Levels</div>
+      <a href="level1.html"><span class="badge badge-l1">L1</span> The Basics</a>
+      <a href="level2.html"><span class="badge badge-l2">L2</span> Hardware Security</a>
+      <a href="level3.html"><span class="badge badge-l3">L3</span> Hardening</a>
+      <a href="level4.html"><span class="badge badge-l4">L4</span> High Sovereignty</a>
+      <div class="sidebar-section-label">More</div>
+      <a href="resources.html"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.649.655 4.375.78 2.813.919 1.028 1.459 0 2.068V15a.5.5 0 0 0 .5.5c.16 0 .311-.08.4-.2C1.4 14.4 3.015 13.86 4.375 13.72c1.126-.114 2.218.036 3.125.623V1.783zm.5 11.94c.907-.587 1.999-.737 3.125-.623 1.36.14 2.975.68 3.475 1.58.089.12.24.2.4.2a.5.5 0 0 0 .5-.5V2.068c-1.028-.609-2.813-1.15-4.375-1.288C9.851.655 8.485.936 7.5 1.783V13.72z"/></svg> Resources</a>
+      <a href="search.html"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.099zm-5.242 1.656a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z"/></svg> Search</a>
+      <div class="sidebar-section-label">On This Page</div>
+      <div id="sidebar-toc"></div>
+    </div>
+    <div class="sidebar-footer">
+      <a href="https://github.com/lucas1sanz/bitcoin/blob/main/level4.html" target="_blank" rel="noopener">Edit this page on GitHub ↗</a>
+    </div>
+  </nav>
+
+  <main class="content" id="main-content">
+    <div class="content-inner">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Level 4 — High Sovereignty</span>
+      </nav>
+
+      <div class="page-hero">
+        <div class="hero-meta">
+          <span class="badge badge-l4">Level 4</span>
+          <span class="text-muted text-sm">Institutional</span>
+        </div>
+        <h1>High Sovereignty</h1>
+        <p class="hero-subtitle">Maximum security for significant holdings: air-gapped signing, multisig, inheritance planning, and full operational security.</p>
+      </div>
+
+      <!-- ═══ Section 1 ═══ -->
+      <section>
+        <h2 id="airgap">Stateless Signing — Air-Gapped Wallets</h2>
+        <p>Even a hardware wallet connected via USB has a potential attack surface: the USB connection itself can be exploited. An air-gapped signing device eliminates this attack surface entirely — it never touches an internet-connected device electronically.</p>
+
+        <h3 id="seedsigner">SeedSigner — DIY Stateless Signer</h3>
+        <p>SeedSigner is an open-source project that turns a $50 Raspberry Pi Zero into a stateless air-gapped signing device. "Stateless" means the device stores <em>nothing</em> between sessions — every time you want to sign, you load the seed fresh from a QR code, sign the transaction, and the seed is gone when the device powers off.</p>
+
+        <h3 id="seedsigner-specs">Hardware Requirements</h3>
+        <ul>
+          <li>Raspberry Pi Zero (non-WiFi version recommended) — ~$10</li>
+          <li>Waveshare 1.3" LCD hat — ~$15</li>
+          <li>Raspberry Pi camera module (v1.3) — ~$15</li>
+          <li>3D printed case (optional but recommended)</li>
+          <li>microSD card (16GB+)</li>
+        </ul>
+
+        <h3 id="seedsigner-workflow">Signing Workflow</h3>
+        <ol>
+          <li>Sparrow Wallet builds an unsigned PSBT and displays it as an animated QR code sequence</li>
+          <li>SeedSigner scans the QR codes with its camera — the PSBT is loaded into RAM</li>
+          <li>You scan your seed QR code (pre-prepared from your seed words) — seed is loaded into RAM</li>
+          <li>SeedSigner displays transaction details on screen — you verify amount, address, fee</li>
+          <li>Confirm on device — SeedSigner signs the PSBT in RAM</li>
+          <li>SeedSigner displays the signed PSBT as an animated QR sequence</li>
+          <li>Sparrow scans the signed PSBT and broadcasts the transaction</li>
+          <li>Power off SeedSigner — seed is gone, nothing persists</li>
+        </ol>
+
+        <div class="callout callout-warning">
+          <div class="callout-icon">⚠️</div>
+          <div class="callout-body">
+            <strong>Verify firmware hash</strong>
+            <p>Build SeedSigner from source or verify the SHA256 hash of the firmware image against the published hash on the official GitHub repository. Malicious firmware could steal your seed when you scan it. Only use firmware from the official seedsigner.com GitHub org.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ Section 2 ═══ -->
+      <section>
+        <h2 id="multisig">Multisig 2-of-3</h2>
+        <p>A multisig wallet requires signatures from multiple private keys to authorize a transaction. A 2-of-3 setup means you hold 3 keys and any 2 are sufficient to spend. This eliminates single points of failure: loss of one key does not lose the bitcoin; theft of one key does not expose the bitcoin.</p>
+
+        <h3 id="multisig-threat-model">Threat Model Coverage</h3>
+        <ul>
+          <li><strong>Loss:</strong> One key destroyed (fire, flood, hardware failure) — the other two keys can still spend</li>
+          <li><strong>Theft:</strong> One key stolen — attacker needs a second key, which is in a different location</li>
+          <li><strong>Single-location attack:</strong> Attacker has access to your home — only one key is there</li>
+          <li><strong>Hardware wallet failure:</strong> One device malfunctions — other devices can sign</li>
+        </ul>
+
+        <h3 id="multisig-setup">Setting Up 2-of-3 with Sparrow + Coldcard</h3>
+        <ol>
+          <li>Generate 3 separate Coldcard wallets with separate seeds (and separate passphrases if using them)</li>
+          <li>Export each wallet's xpub to Sparrow via microSD</li>
+          <li>In Sparrow: File → New Wallet → Multi Signature Wallet → 2 of 3</li>
+          <li>Import the 3 xpubs; Sparrow builds the descriptor</li>
+          <li>Export the output descriptor and back it up separately — this is critical for recovery</li>
+          <li>Verify a receive address on each signing device</li>
+          <li>Test with a small amount before using for significant holdings</li>
+        </ol>
+
+        <div class="callout callout-danger">
+          <div class="callout-icon">🚨</div>
+          <div class="callout-body">
+            <strong>The output descriptor is required for recovery</strong>
+            <p>In a multisig wallet, you need all three xpubs (and their derivation paths) to reconstruct the wallet and spend — not just the seed phrase. If you lose the output descriptor, you need all three seeds to reconstruct it. Back up the descriptor file from Sparrow and store it separately from all three keys.</p>
+          </div>
+        </div>
+
+        <h3 id="key-distribution">Key Distribution Strategy</h3>
+        <ul>
+          <li><strong>Key 1:</strong> At home (primary use key) — Coldcard in a TL-30 safe</li>
+          <li><strong>Key 2:</strong> Safety deposit box or trusted family member — different city preferred</li>
+          <li><strong>Key 3:</strong> Lawyer, professional custody, or geographically distant secure location</li>
+        </ul>
+
+        <h3 id="multisig-coordinators">Alternative Coordinators</h3>
+        <ul>
+          <li><strong>Caravan</strong> by Unchained Capital — browser-based, open source, works offline</li>
+          <li><strong>Liana</strong> by Wizardsardine — adds timelocked recovery paths for inheritance</li>
+          <li><strong>Specter Desktop</strong> — full node integration, multisig support</li>
+        </ul>
+      </section>
+
+      <!-- ═══ Section 3 ═══ -->
+      <section>
+        <h2 id="seed-xor">Seed XOR and Secret Sharing</h2>
+        <p>Seed splitting schemes divide a seed into multiple shares that can be recombined to recover the original seed. This protects the backup from compromise — any single share reveals nothing about the seed.</p>
+
+        <h3 id="seed-xor-coldcard">Coldcard Seed XOR</h3>
+        <p>Coldcard's built-in XOR feature splits a 24-word BIP-39 seed into two (or more) 24-word shares. XOR-ing the shares together recovers the original seed. Neither share alone reveals any information about the original seed.</p>
+
+        <p>Use case: store share A at location 1, share B at location 2. A burglar finding share A cannot access funds. Only when both shares are combined is the original seed recovered.</p>
+
+        <h3 id="slip39">SLIP-39 — Shamir's Secret Sharing</h3>
+        <p>SLIP-39, developed by SatoshiLabs (Trezor), implements Shamir's Secret Sharing for Bitcoin seeds. You generate N shares and require M to reconstruct the secret (M-of-N scheme). Example: 3-of-5 — create 5 shares, any 3 can recover the seed.</p>
+
+        <div class="callout callout-danger">
+          <div class="callout-icon">🚨</div>
+          <div class="callout-body">
+            <strong>Critical distinction: backup scheme vs. spending policy</strong>
+            <p>Seed XOR and SLIP-39 are <strong>backup protection schemes</strong> — they protect the storage of a seed phrase. They do <strong>not</strong> protect against an attacker who obtains enough shares and then reconstructs the seed to steal funds. <strong>Multisig</strong> is a <strong>spending policy</strong> — it requires multiple keys to authorize transactions, providing protection even if an attacker has one key. These are different tools for different threats. Do not conflate them.</p>
+          </div>
+        </div>
+
+        <h3 id="which-to-use">Which to Use</h3>
+        <ul>
+          <li>Use <strong>Seed XOR</strong> if you have a Coldcard and want to split a single seed across locations without changing your existing setup</li>
+          <li>Use <strong>SLIP-39</strong> with a Trezor for flexible M-of-N share distribution</li>
+          <li>Use <strong>Multisig</strong> when you want protection against a thief who finds one key — the thief still cannot spend without additional keys</li>
+          <li>For high-value holdings, consider <strong>multisig + passphrase</strong> for defense in depth</li>
+        </ul>
+      </section>
+
+      <!-- ═══ Section 4 ═══ -->
+      <section>
+        <h2 id="inheritance">Inheritance Planning</h2>
+        <p>Without proper inheritance planning, your bitcoin may be permanently lost when you die. Your heirs need to know: that you hold bitcoin, how much (approximately), how to access it, and in what order to proceed. They do not need your seed phrase — they need instructions.</p>
+
+        <h3 id="letter-of-instructions">Letter of Instructions</h3>
+        <p>A Letter of Instructions (LOI) is a non-legal document that explains how to access your bitcoin. It should be stored with your attorney or in a safety deposit box. The LOI should include:</p>
+        <ul>
+          <li>A statement that you hold bitcoin in self-custody</li>
+          <li>The approximate amount (or a range)</li>
+          <li>What hardware wallets you use (device type, where physically stored)</li>
+          <li>Where the seed phrase backups are located — described by location, <em>not</em> the words themselves</li>
+          <li>Whether a passphrase is required and where that passphrase backup is stored</li>
+          <li>The name and contact info of someone technically capable of assisting (a trusted technician, not a family member if they are the heir)</li>
+          <li>Which wallet software to use (Sparrow, download from sparrowwallet.com)</li>
+          <li>How to contact an attorney who specializes in digital assets if disputes arise</li>
+        </ul>
+
+        <div class="callout callout-warning">
+          <div class="callout-icon">⚠️</div>
+          <div class="callout-body">
+            <strong>Never include seed words in a will</strong>
+            <p>Wills become public record when probated. If your seed phrase is in your will, it is publicly accessible. Store seed phrases separately and reference their locations in the LOI. The LOI itself should be sealed and secured, not public.</p>
+          </div>
+        </div>
+
+        <h3 id="multisig-inheritance">Multisig Inheritance</h3>
+        <p>For high-value holdings, a multisig setup provides an elegant inheritance solution: give one of the 3 keys (plus the output descriptor) to your estate attorney or heir. After your death, they hold one key; the remaining two keys in your estate provide the second required signature. No single person has unilateral access while you are alive.</p>
+
+        <h3 id="casa-covenant">Professional Services</h3>
+        <p>Casa offers a Covenant service: Casa holds one key in a 3-of-5 multisig arrangement and has a defined inheritance protocol. Unchained Capital offers collaborative custody with similar inheritance features. These services add trust assumptions but significantly simplify heir access.</p>
+      </section>
+
+      <!-- ═══ Section 5 ═══ -->
+      <section>
+        <h2 id="physical-security">Physical Security</h2>
+        <p>All cryptographic security is bypassed by the "$5 wrench attack" — physical coercion. An attacker with physical access to you (or your family) can compel you to hand over keys. Physical security is about reducing the probability and impact of such attacks.</p>
+
+        <h3 id="threat-reduction">Threat Reduction</h3>
+        <ul>
+          <li><strong>Never disclose holdings:</strong> Do not tell acquaintances, colleagues, or even most family members that you hold significant bitcoin. Loose talk creates targeting opportunities.</li>
+          <li><strong>Duress wallet (Coldcard):</strong> The Coldcard duress PIN opens a small, plausible decoy wallet. Under coercion, reveal this PIN — the attacker sees a functional wallet with a small balance and has no way to know a larger wallet exists.</li>
+          <li><strong>Geographic key distribution:</strong> A multisig setup where no single location holds enough keys means a physical attack at one location cannot result in loss of funds.</li>
+          <li><strong>Plausible deniability:</strong> The BIP-39 passphrase (Level 3) enables a credible second wallet. Keep funds in the passphrase wallet; reveal only the seed phrase under duress.</li>
+        </ul>
+
+        <h3 id="safe-recommendations">Safe Recommendations</h3>
+        <ul>
+          <li>Minimum: <strong>TL-30 rated</strong> — 30 minutes of forced entry resistance. Sufficient for most residential threats.</li>
+          <li>Bolt or anchor the safe to a wall or floor — safes carried out and opened elsewhere defeat the purpose.</li>
+          <li>Do not discuss the existence or location of the safe publicly.</li>
+          <li>Keep a small amount of cash and valuables in the safe as a decoy.</li>
+        </ul>
+
+        <h3 id="geographic-distribution">Geographic Distribution</h3>
+        <p>For holdings over $500k equivalent, distributing keys geographically is essential. An attacker who cannot find all keys in one location cannot steal. Considerations:</p>
+        <ul>
+          <li>Different cities (not just different neighborhoods) for maximum protection</li>
+          <li>At least one key in a jurisdiction where you have no physical presence</li>
+          <li>Safety deposit boxes at banks in different cities</li>
+          <li>Professional custody services as one key holder</li>
+        </ul>
+      </section>
+
+      <!-- ═══ Section 6 ═══ -->
+      <section>
+        <h2 id="opsec">OpSec for High-Value Holders</h2>
+        <p>Operational security (OpSec) is the practice of protecting information that could give an adversary an advantage. For Bitcoin holders, the primary risk is becoming a target for physical attacks or sophisticated social engineering.</p>
+
+        <h3 id="disclosure-policy">Disclosure Policy</h3>
+        <ul>
+          <li><strong>Never disclose approximate holdings</strong> publicly — not on social media, podcasts, conference talks, or casual conversation</li>
+          <li>Avoid connecting your real name to known Bitcoin-related activities in public (e.g., attending meetups, posting in forums)</li>
+          <li>Do not brag about Bitcoin gains; if asked whether you own bitcoin, a vague "a little" or "some" is sufficient</li>
+        </ul>
+
+        <h3 id="purchase-privacy">Hardware Purchase Privacy</h3>
+        <ul>
+          <li>Use a <strong>PO box</strong> or a trusted third party's address (not your home) for hardware wallet deliveries</li>
+          <li>Pay with cash or a prepaid card where possible</li>
+          <li><strong>Do not register</strong> hardware wallets with the manufacturer — registration databases are breach targets (Ledger 2020)</li>
+          <li>Use a separate, dedicated email address for all Bitcoin-related accounts</li>
+          <li>Use unique usernames across Bitcoin services — do not reuse usernames from other contexts</li>
+        </ul>
+
+        <h3 id="kyc-awareness">KYC Awareness</h3>
+        <p>Any exchange that has your identity documents (KYC) permanently associates your real identity with your Bitcoin purchasing activity. Assume every KYC exchange has suffered or will suffer a data breach. Mitigations:</p>
+        <ul>
+          <li>Use P2P markets or Bitcoin ATMs with lower KYC thresholds for smaller purchases</li>
+          <li>Mining is a non-KYC acquisition method</li>
+          <li>Accept BTC for services rendered (invoice with BTCPay Server)</li>
+          <li>If you must use a KYC exchange, minimize the amount attributed to it and withdraw to self-custody immediately</li>
+        </ul>
+
+        <div class="callout callout-info">
+          <div class="callout-icon">ℹ️</div>
+          <div class="callout-body">
+            <strong>No perfect privacy exists</strong>
+            <p>These measures significantly reduce risk but provide no absolute guarantees. On-chain analysis companies have sophisticated heuristics. The goal is to raise the cost of targeting you above the attacker's expected benefit. Combining privacy measures multiplies their effectiveness.</p>
+          </div>
+        </div>
+      </section>
+
+      <nav class="page-nav" aria-label="Page navigation">
+        <a href="level3.html" class="prev">
+          <span class="nav-direction">← Previous</span>
+          <span class="nav-title">Level 3 — Hardening</span>
+        </a>
+        <a href="resources.html" class="next">
+          <span class="nav-direction">Next →</span>
+          <span class="nav-title">Resources</span>
+        </a>
+      </nav>
+
+    </div>
+  </main>
+</div>
+
+<footer class="site-footer">
+  No trackers. No cookies. Open source on <a href="https://github.com/lucas1sanz/bitcoin" target="_blank" rel="noopener">GitHub</a>.
+</footer>
+
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

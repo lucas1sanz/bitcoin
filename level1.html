@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bitcoin self-custody basics — why exchanges fail, how to withdraw safely, seed phrases, and your first backup.">
+  <title>Level 1 — The Basics | Bitcoin Security</title>
+  <link rel="icon" href="assets/img/bitcoin-logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header class="site-header">
+  <a href="index.html" class="logo" aria-label="Bitcoin Security — Home">
+    <img src="assets/img/bitcoin-logo.svg" alt="" width="28" height="28">
+    <span class="logo-text">₿<span>itcoin</span> Security</span>
+  </a>
+  <div class="header-search" role="search">
+    <form action="search.html" method="get">
+      <button type="submit" aria-label="Search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.099zm-5.242 1.656a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z" fill="currentColor"/></svg></button>
+      <input type="search" name="q" placeholder="Search topics…" aria-label="Search bitcoin security topics">
+    </form>
+  </div>
+  <div class="header-actions">
+    <a href="https://github.com/lucas1sanz/bitcoin" class="btn-contribute" target="_blank" rel="noopener">Contribute</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="page-wrapper">
+  <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
+  <nav id="sidebar" class="sidebar" aria-label="Site navigation">
+    <div class="sidebar-nav">
+      <div class="sidebar-section-label">Navigation</div>
+      <a href="index.html"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L8.354 1.146z"/></svg> Home</a>
+      <div class="sidebar-section-label">Security Levels</div>
+      <a href="level1.html"><span class="badge badge-l1">L1</span> The Basics</a>
+      <a href="level2.html"><span class="badge badge-l2">L2</span> Hardware Security</a>
+      <a href="level3.html"><span class="badge badge-l3">L3</span> Hardening</a>
+      <a href="level4.html"><span class="badge badge-l4">L4</span> High Sovereignty</a>
+      <div class="sidebar-section-label">More</div>
+      <a href="resources.html"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.649.655 4.375.78 2.813.919 1.028 1.459 0 2.068V15a.5.5 0 0 0 .5.5c.16 0 .311-.08.4-.2C1.4 14.4 3.015 13.86 4.375 13.72c1.126-.114 2.218.036 3.125.623V1.783zm.5 11.94c.907-.587 1.999-.737 3.125-.623 1.36.14 2.975.68 3.475 1.58.089.12.24.2.4.2a.5.5 0 0 0 .5-.5V2.068c-1.028-.609-2.813-1.15-4.375-1.288C9.851.655 8.485.936 7.5 1.783V13.72z"/></svg> Resources</a>
+      <a href="search.html"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.099zm-5.242 1.656a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z"/></svg> Search</a>
+      <div class="sidebar-section-label">On This Page</div>
+      <div id="sidebar-toc"></div>
+    </div>
+    <div class="sidebar-footer">
+      <a href="https://github.com/lucas1sanz/bitcoin/blob/main/level1.html" target="_blank" rel="noopener">Edit this page on GitHub ↗</a>
+    </div>
+  </nav>
+
+  <main class="content" id="main-content">
+    <div class="content-inner">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Level 1 — The Basics</span>
+      </nav>
+
+      <div class="page-hero">
+        <div class="hero-meta">
+          <span class="badge badge-l1">Level 1</span>
+          <span class="text-muted text-sm">Beginner</span>
+        </div>
+        <h1>The Basics</h1>
+        <p class="hero-subtitle">Everything you need to move your first bitcoin off an exchange and into proper self-custody — safely.</p>
+      </div>
+
+      <!-- ═══ Section 1 ═══ -->
+      <section>
+        <h2 id="why-self-custody">Why Self-Custody Matters</h2>
+        <p>"Not your keys, not your coins" is not a slogan — it is a description of how Bitcoin works. When your bitcoin sits on an exchange, you own an IOU, not bitcoin. The exchange controls the private keys. If the exchange fails, freezes withdrawals, or is hacked, your bitcoin is at risk.</p>
+
+        <h3 id="exchange-failures">A Brief History of Exchange Failures</h3>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Exchange</th>
+                <th>Year</th>
+                <th>Event</th>
+                <th>Estimated Loss</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Mt. Gox</strong></td>
+                <td>2014</td>
+                <td>Hack + insolvency</td>
+                <td>850,000 BTC (~$450M at time)</td>
+              </tr>
+              <tr>
+                <td><strong>Bitfinex</strong></td>
+                <td>2016</td>
+                <td>Security breach</td>
+                <td>120,000 BTC</td>
+              </tr>
+              <tr>
+                <td><strong>QuadrigaCX</strong></td>
+                <td>2019</td>
+                <td>CEO death / fraud</td>
+                <td>~$190M CAD</td>
+              </tr>
+              <tr>
+                <td><strong>Celsius Network</strong></td>
+                <td>2022</td>
+                <td>Insolvency / withdrawal freeze</td>
+                <td>~$4.7B customer funds</td>
+              </tr>
+              <tr>
+                <td><strong>FTX</strong></td>
+                <td>2022</td>
+                <td>Fraud / insolvency</td>
+                <td>~$8B shortfall</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout callout-warning">
+          <div class="callout-icon">⚠️</div>
+          <div class="callout-body">
+            <strong>KYC data is permanent</strong>
+            <p>Even after you withdraw from an exchange, the exchange has your identity documents on file. KYC data has leaked from multiple exchanges. Assume any exchange with your documents has suffered or will suffer a data breach.</p>
+          </div>
+        </div>
+
+        <p>Self-custody is not just about protecting against exchange failure. It is also about privacy (exchange data leaks), censorship resistance (exchanges can freeze accounts), and actual ownership (you can transact without permission).</p>
+      </section>
+
+      <!-- ═══ Section 2 ═══ -->
+      <section>
+        <h2 id="withdrawal-checklist">Exchange Withdrawal Checklist</h2>
+        <p>When withdrawing from an exchange for the first time, do not rush. A methodical approach prevents irreversible mistakes.</p>
+
+        <div class="callout callout-danger">
+          <div class="callout-icon">🚨</div>
+          <div class="callout-body">
+            <strong>Clipboard hijacking malware is common</strong>
+            <p>Software running on your computer can silently replace a copied bitcoin address with an attacker-controlled address. You copy your address → you paste someone else's → you send to the wrong address. Always verify the pasted address character by character, especially the first 6 and last 4 characters.</p>
+          </div>
+        </div>
+
+        <h3 id="withdrawal-steps">Step-by-Step Withdrawal Protocol</h3>
+        <ol>
+          <li><strong>Generate a fresh receive address</strong> in your wallet app. Do not reuse old addresses.</li>
+          <li><strong>Verify the address on device</strong> if using a hardware wallet — the wallet screen is the only trusted display.</li>
+          <li><strong>Send a test transaction first</strong> — a small amount (e.g., $10 equivalent). Wait for 1 confirmation.</li>
+          <li><strong>Confirm receipt</strong> in your wallet. Open a block explorer (blockstream.info) in a private browser window as a second check.</li>
+          <li><strong>Only then</strong> withdraw the full amount.</li>
+          <li><strong>Enable withdrawal address whitelisting</strong> on the exchange: add your address to the whitelist and wait the mandatory 24-48 hour delay before it activates.</li>
+        </ol>
+
+        <div class="callout callout-info">
+          <div class="callout-icon">ℹ️</div>
+          <div class="callout-body">
+            <strong>Network fees</strong>
+            <p>Bitcoin on-chain fees vary by network demand. Check <a href="https://mempool.space" target="_blank" rel="noopener">mempool.space</a> to see current fee rates before withdrawing large amounts. Low-urgency withdrawals can save significant fees by choosing a lower fee rate.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ Section 3 ═══ -->
+      <section>
+        <h2 id="mobile-wallets">Mobile Wallets</h2>
+        <p>A mobile wallet is a good first step toward self-custody for small amounts. For larger holdings you should use a hardware wallet (Level 2). Mobile wallets keep keys on your phone — if your phone is compromised or lost without a backup, funds can be lost.</p>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Wallet</th>
+                <th>Platform</th>
+                <th>Lightning</th>
+                <th>On-chain</th>
+                <th>Custody</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Blue Wallet</strong></td>
+                <td>iOS / Android</td>
+                <td class="tick">✓</td>
+                <td class="tick">✓</td>
+                <td>Self-custodial</td>
+                <td>Open source, supports multiple wallets, PSBT</td>
+              </tr>
+              <tr>
+                <td><strong>Phoenix</strong></td>
+                <td>iOS / Android</td>
+                <td class="tick">✓</td>
+                <td class="cross">—</td>
+                <td>Self-custodial</td>
+                <td>ACINQ, automatic channels, splicing</td>
+              </tr>
+              <tr>
+                <td><strong>Muun</strong></td>
+                <td>iOS / Android</td>
+                <td class="tick">✓</td>
+                <td class="tick">✓</td>
+                <td>Self-custodial</td>
+                <td>Submarine swaps, 2-of-2 multisig</td>
+              </tr>
+              <tr>
+                <td><strong>Breez</strong></td>
+                <td>iOS / Android</td>
+                <td class="tick">✓</td>
+                <td class="cross">—</td>
+                <td>Self-custodial</td>
+                <td>Non-custodial Lightning, point-of-sale built-in</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout callout-warning">
+          <div class="callout-icon">⚠️</div>
+          <div class="callout-body">
+            <strong>Mobile wallets are hot wallets</strong>
+            <p>Your private keys are on an internet-connected device. Do not store more in a mobile wallet than you would carry in a physical wallet. For savings, use a hardware wallet (Level 2).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ Section 4 ═══ -->
+      <section>
+        <h2 id="seed-phrase">Understanding Your Seed Phrase</h2>
+        <p>When you create a new Bitcoin wallet, it generates a seed phrase — a list of 12 or 24 English words. This sequence of words <em>is</em> your wallet. Anyone who obtains these words can derive every private key in your wallet and steal all your bitcoin.</p>
+
+        <h3 id="bip39-explained">How BIP-39 Works</h3>
+        <p>BIP-39 is the standard that defines the word list and encoding scheme. Here is what happens under the hood:</p>
+        <ol>
+          <li>Your device generates 128 bits (12 words) or 256 bits (24 words) of cryptographically random entropy.</li>
+          <li>A checksum is appended — 4 bits for 12-word, 8 bits for 24-word.</li>
+          <li>The resulting bitstring is split into 11-bit chunks, each mapped to one of 2,048 words.</li>
+          <li>From this seed, a master private key is derived, from which all wallet addresses are generated deterministically.</li>
+        </ol>
+
+        <div class="callout callout-danger">
+          <div class="callout-icon">🚨</div>
+          <div class="callout-body">
+            <strong>Never do any of the following with your seed phrase</strong>
+            <p>• Photograph it with your phone camera (cloud sync)<br>
+            • Type it into any website or app that asks for it<br>
+            • Store it in cloud storage (Google Drive, Dropbox, iCloud, email)<br>
+            • Send it in a message or email<br>
+            • Store it in a password manager<br>
+            • Generate it on an internet-connected computer</p>
+          </div>
+        </div>
+
+        <h3 id="entropy-quality">Entropy Quality</h3>
+        <p>The security of your wallet depends entirely on the randomness of the seed. Always generate seeds on the hardware wallet device itself, not on a computer or phone app. Hardware wallets use hardware random number generators (TRNG/HRNG) with additional entropy sources. Never use "brain wallets" (phrases you invent) — human-chosen phrases have catastrophically low entropy.</p>
+      </section>
+
+      <!-- ═══ Section 5 ═══ -->
+      <section>
+        <h2 id="first-backup">Your First Seed Backup</h2>
+        <p>Your seed phrase backup is the most important physical object you own in Bitcoin. If the backup is lost or destroyed, your bitcoin is gone forever. There is no customer service, no password reset.</p>
+
+        <h3 id="paper-backup">Paper Backup Protocol</h3>
+        <ul class="checklist">
+          <li>Write words in <strong>UPPERCASE BLOCK LETTERS</strong> — avoid handwriting ambiguity (e.g., 1 vs l vs I)</li>
+          <li>Use the <strong>word number</strong> next to each word (Word 1: ABANDON, Word 2: ABILITY…)</li>
+          <li>Use <strong>acid-free paper</strong> or dedicated seed backup cards (e.g., Coldcard's backup cards)</li>
+          <li>Make <strong>two copies</strong> and store them in two different physical locations</li>
+          <li>Consider <strong>laminating</strong> the paper for moisture resistance</li>
+          <li><strong>Never use a printer or scanner</strong> — modern printers store documents in memory; some connect to the internet</li>
+          <li>Do <strong>not</strong> store both copies in the same location (house fire = both copies gone)</li>
+        </ul>
+
+        <div class="callout callout-warning">
+          <div class="callout-icon">⚠️</div>
+          <div class="callout-body">
+            <strong>Verify your backup before funding the wallet</strong>
+            <p>The only way to know your backup works is to test it. After writing your seed phrase, wipe the wallet, recover from your written words, and verify the first receive address matches. Do this <em>before</em> sending any meaningful amount of bitcoin. A transcription error discovered after funding is a disaster.</p>
+          </div>
+        </div>
+
+        <h3 id="backup-storage">Where to Store Backups</h3>
+        <p>Good locations for a primary copy:</p>
+        <ul>
+          <li>A small fireproof safe bolted to the floor at home</li>
+          <li>A safety deposit box at a bank (with appropriate access instructions for heirs)</li>
+          <li>Secured location at a trusted family member's home (different geography)</li>
+        </ul>
+        <p>The goal is <strong>geographic separation</strong>. If a flood, fire, or burglary affects one location, the second copy is unaffected. At Level 3, you will upgrade to metal backups that survive house fires.</p>
+      </section>
+
+      <!-- Page navigation -->
+      <nav class="page-nav" aria-label="Page navigation">
+        <a href="index.html" class="prev">
+          <span class="nav-direction">← Previous</span>
+          <span class="nav-title">Home</span>
+        </a>
+        <a href="level2.html" class="next">
+          <span class="nav-direction">Next →</span>
+          <span class="nav-title">Level 2 — Hardware Security</span>
+        </a>
+      </nav>
+
+    </div><!-- /content-inner -->
+  </main>
+</div>
+
+<footer class="site-footer">
+  No trackers. No cookies. Open source on <a href="https://github.com/lucas1sanz/bitcoin" target="_blank" rel="noopener">GitHub</a>.
+</footer>
+
+<script src="assets/js/nav.js"></script>
+</body>
+</html>
