@@ -1,0 +1,181 @@
+/* Self-hosted Inter variable font — eliminates Google Fonts DNS call */
+@font-face {
+  font-family: 'Inter';
+  src: url('./fonts/Inter-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+/* ─── Bitcoin Orange Palette ─────────────────────────────────────────────── */
+:root {
+  --ifm-color-primary: #f7931a;
+  --ifm-color-primary-dark: #e07d08;
+  --ifm-color-primary-darker: #d47508;
+  --ifm-color-primary-darkest: #ae6006;
+  --ifm-color-primary-light: #f9a03b;
+  --ifm-color-primary-lighter: #f9a849;
+  --ifm-color-primary-lightest: #fbbe74;
+
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --ifm-code-font-size: 90%;
+  --ifm-heading-font-weight: 600;
+  --ifm-global-radius: 6px;
+  --docusaurus-highlighted-code-line-bg: rgba(247, 147, 26, 0.12);
+}
+
+/* ─── Dark Mode ──────────────────────────────────────────────────────────── */
+[data-theme='dark'] {
+  --ifm-color-primary: #f7931a;
+  --ifm-color-primary-dark: #e07d08;
+  --ifm-color-primary-darker: #d47508;
+  --ifm-color-primary-darkest: #ae6006;
+  --ifm-color-primary-light: #f9a03b;
+  --ifm-color-primary-lighter: #f9a849;
+  --ifm-color-primary-lightest: #fbbe74;
+
+  --ifm-background-color: #0d0d0d;
+  --ifm-background-surface-color: #161616;
+  --ifm-navbar-background-color: #111111;
+  --ifm-footer-background-color: #0a0a0a;
+  --ifm-toc-border-color: #2a2a2a;
+  --ifm-color-emphasis-300: #444;
+  --docusaurus-highlighted-code-line-bg: rgba(247, 147, 26, 0.15);
+}
+
+/* ─── Navbar ─────────────────────────────────────────────────────────────── */
+.navbar {
+  border-bottom: 1px solid rgba(247, 147, 26, 0.2);
+}
+
+[data-theme='dark'] .navbar {
+  box-shadow: 0 1px 0 rgba(247, 147, 26, 0.15);
+}
+
+.navbar__brand {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* ─── Sidebar ────────────────────────────────────────────────────────────── */
+.menu__link--active {
+  border-left: 3px solid var(--ifm-color-primary);
+  color: var(--ifm-color-primary) !important;
+  font-weight: 600;
+}
+
+.menu__caret::before {
+  background-color: var(--ifm-color-primary);
+}
+
+/* ─── Homepage Cards ─────────────────────────────────────────────────────── */
+.feature-card {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  padding: 1.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+[data-theme='dark'] .feature-card:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 20px rgba(247, 147, 26, 0.2);
+  transform: translateY(-2px);
+}
+
+.feature-card:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 4px 16px rgba(247, 147, 26, 0.15);
+  transform: translateY(-2px);
+}
+
+/* ─── Level Badges (inline) ─────────────────────────────────────────────── */
+.badge--level-1 {
+  background-color: #1a7a1a;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.badge--level-2 {
+  background-color: #a07800;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.badge--level-3 {
+  background-color: #b84e00;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+/* ─── Code Blocks ────────────────────────────────────────────────────────── */
+.prism-code {
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* ─── Admonitions ────────────────────────────────────────────────────────── */
+.alert--warning {
+  border-left-color: var(--ifm-color-primary);
+}
+
+/* ─── Tables ─────────────────────────────────────────────────────────────── */
+table th {
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-color-primary);
+}
+
+/* ─── Footer ─────────────────────────────────────────────────────────────── */
+.footer {
+  border-top: 1px solid rgba(247, 147, 26, 0.15);
+}
+
+.footer__copyright {
+  font-size: 0.8rem;
+  opacity: 0.6;
+  font-style: italic;
+}
+
+/* ─── Hero Section ───────────────────────────────────────────────────────── */
+.hero-bitcoin {
+  background: linear-gradient(135deg, #0d0d0d 0%, #1a0d00 50%, #0d0d0d 100%);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.hero-bitcoin .hero__title {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--ifm-color-primary);
+}
+
+.hero-bitcoin .hero__subtitle {
+  font-size: 1.25rem;
+  opacity: 0.85;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .hero-bitcoin .hero__title {
+    font-size: 2rem;
+  }
+  .hero-bitcoin .hero__subtitle {
+    font-size: 1rem;
+  }
+}

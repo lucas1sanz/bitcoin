@@ -1,0 +1,12 @@
+{
+  "label": "Level 2 — Paranoid Path",
+  "position": 4,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Level 2 — Paranoid Path",
+    "description": "Advanced protocols for high-value holdings: multisig, air-gapped signing, and SeedQR.",
+    "slug": "/advanced"
+  }
+}

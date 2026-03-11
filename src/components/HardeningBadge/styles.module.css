@@ -1,0 +1,49 @@
+.badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+}
+
+.level1 {
+  background-color: #1a5c1a;
+  color: #7dde7d;
+  border: 1px solid #2d8a2d;
+}
+
+.level2 {
+  background-color: #5c4a00;
+  color: #f0c040;
+  border: 1px solid #8a7000;
+}
+
+.level3 {
+  background-color: #5c2000;
+  color: #f09060;
+  border: 1px solid #8a3000;
+}
+
+[data-theme='light'] .level1 {
+  background-color: #d4f5d4;
+  color: #1a5c1a;
+  border: 1px solid #2d8a2d;
+}
+
+[data-theme='light'] .level2 {
+  background-color: #fff3cc;
+  color: #5c4a00;
+  border: 1px solid #8a7000;
+}
+
+[data-theme='light'] .level3 {
+  background-color: #ffddc5;
+  color: #5c2000;
+  border: 1px solid #8a3000;
+}

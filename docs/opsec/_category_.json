@@ -1,0 +1,12 @@
+{
+  "label": "Level 3 — Institutional Hardening",
+  "position": 5,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Level 3 — Institutional Hardening",
+    "description": "OpSec, physical security, and practices for organizations managing large Bitcoin treasuries.",
+    "slug": "/opsec"
+  }
+}

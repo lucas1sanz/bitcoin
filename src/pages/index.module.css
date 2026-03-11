@@ -1,0 +1,223 @@
+/* ─── Hero ───────────────────────────────────────────────────────────────── */
+.hero {
+  background: radial-gradient(ellipse at top, #1a0d00 0%, #0d0d0d 70%);
+  padding: 5rem 1.5rem 4rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(247, 147, 26, 0.2);
+}
+
+[data-theme='light'] .hero {
+  background: radial-gradient(ellipse at top, #fff8f0 0%, #ffffff 70%);
+  border-bottom: 1px solid rgba(247, 147, 26, 0.3);
+}
+
+.heroInner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.heroShield {
+  font-size: 4rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  color: #f7931a;
+  text-shadow: 0 0 40px rgba(247, 147, 26, 0.4);
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #f7931a;
+  margin: 0 0 1rem;
+  line-height: 1.1;
+}
+
+.heroSubtitle {
+  font-size: 1.15rem;
+  opacity: 0.8;
+  line-height: 1.6;
+  margin: 0 0 2rem;
+}
+
+.heroCta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ctaButton {
+  background-color: #f7931a !important;
+  border-color: #f7931a !important;
+  color: #0d0d0d !important;
+  font-weight: 700;
+}
+
+.ctaButton:hover {
+  background-color: #e07d08 !important;
+  border-color: #e07d08 !important;
+  color: #0d0d0d !important;
+}
+
+.ctaButtonSecondary {
+  border-color: rgba(247, 147, 26, 0.5) !important;
+  color: #f7931a !important;
+}
+
+.ctaButtonSecondary:hover {
+  border-color: #f7931a !important;
+  background-color: rgba(247, 147, 26, 0.1) !important;
+}
+
+/* ─── Main ───────────────────────────────────────────────────────────────── */
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.sectionHeader h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.sectionHeader p {
+  opacity: 0.7;
+  font-size: 1.05rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* ─── Feature Grid ───────────────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+.featureCard {
+  display: block;
+  padding: 1.5rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.featureCard:hover {
+  border-color: #f7931a;
+  transform: translateY(-3px);
+}
+
+[data-theme='dark'] .featureCard:hover {
+  box-shadow: 0 0 24px rgba(247, 147, 26, 0.18);
+}
+
+[data-theme='light'] .featureCard:hover {
+  box-shadow: 0 4px 20px rgba(247, 147, 26, 0.2);
+}
+
+.cardIcon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.cardLevel {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #f7931a;
+  border: 1px solid rgba(247, 147, 26, 0.4);
+  border-radius: 3px;
+  padding: 1px 6px;
+  margin-bottom: 0.6rem;
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0.4rem 0 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.cardDescription {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ─── Privacy Banner ─────────────────────────────────────────────────────── */
+.privacyBanner {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid rgba(247, 147, 26, 0.15);
+  border-radius: 8px;
+  margin-bottom: 4rem;
+}
+
+.privacyInner {
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.privacyInner h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.03em;
+}
+
+.privacyItems {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.25rem;
+  text-align: left;
+}
+
+.privacyItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.privacyItem strong {
+  font-weight: 700;
+  color: #f7931a;
+  font-size: 0.95rem;
+}
+
+.privacyItem span {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  line-height: 1.4;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .hero {
+    padding: 3rem 1rem 2.5rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .heroCta {
+    flex-direction: column;
+    align-items: center;
+  }
+}
